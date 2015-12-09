@@ -1,0 +1,9 @@
+# See http://www.mongodb.org/display/DOCS/File+Based+Configuration for format details
+# Run mongod --help to see a list of options
+
+bind_ip = <%= node['mongodb']['bind_ip'].to_s %>
+quiet = <%= node['mongodb']['quiet'].to_s %>
+dbpath = <%= node['mongodb']['dbpath'].to_s %>
+logpath = <%= node['mongodb']['logpath'].to_s %>
+logappend = <%= node['mongodb']['logappend'].to_s %>
+smallfiles = <%= node['mongodb']['smallfiles'].to_s %>
