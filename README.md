@@ -19,7 +19,7 @@ Then run `berks` to install it.
 
 ## Usage
 
-Add `recipe[mongodb::default]` to your run list. This recipe will install `mongodb`,
+Add `recipe[ldk-mongodb::default]` to your run list. This recipe will install `mongodb`,
 enable and start the mongodb service.
 
 ## Attributes
