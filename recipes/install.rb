@@ -6,7 +6,7 @@ end
 
 if node['mongodb']['supervisor']
   supervisor_service 'mongodb' do
-    command '/usr/bin/mongod --quiet --config /etc/mongodb.conf'
+    command '/usr/bin/mongod --config /etc/mongodb.conf'
     user 'mongodb'
     action [:enable, :start]
   end
