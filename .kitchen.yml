@@ -34,3 +34,28 @@ suites:
     attributes:
       mongodb:
         supervisor: true
+  - name: consul
+    driver_config:
+      hostname: consul
+    run_list:
+      - 'recipe[supervisor]'
+      - 'recipe[consul-template]'
+      - 'recipe[ldk-mongodb]'
+      - 'recipe[ldk-mongodb::consul-template]'
+    data_bags_path: 'test/integration/data_bags'
+    attributes:
+      mongodb:
+        supervisor: true
+      consul_template:
+        install_method: 'source'
+        init_style: 'supervisor'
+        service_user: 'root'
+        service_group: 'root'
+        template_mode: '0755'
+        config:
+          consul: '127.0.0.1:8500'
+          max_stale: '10m'
+          ssl:
+            enabled: false
+            verify: false
+          retry: '10s'

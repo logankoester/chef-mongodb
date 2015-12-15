@@ -22,6 +22,12 @@ Then run `berks` to install it.
 Add `recipe[ldk-mongodb::default]` to your run list. This recipe will install `mongodb`,
 enable and start the mongodb service.
 
+### Consul Template
+
+If you are using [Consul](https://www.consul.io/), then you can generate your `/etc/mongodb.conf` file from a Consul K/V value thanks to [consul-template](https://github.com/hashicorp/consul-template/).
+
+Add `recipe[ldk-mongodb::consul-template]` to your run list, and set the variable `MONGODB_CONSUL_KEY` to your desired Consul K/V key for the environment in which `consul-template` runs.
+
 ## Attributes
 
 Refer to `attributes/default.rb` for details.
