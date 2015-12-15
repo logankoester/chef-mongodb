@@ -1,4 +1,4 @@
-%w{mongodb mongodb-tools}.each do |pkg|
+%w{pcre mongodb mongodb-tools}.each do |pkg|
   package pkg do
     action :install
   end
