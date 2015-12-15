@@ -1,1 +1,1 @@
-{{env "MONGODB_CONSUL_KEY" | key}}
+{{env "MONGODB_CONSUL_KEY" | key_or_default "dbpath = <%= node['mongodb']['dbpath'].to_s %>"}}
